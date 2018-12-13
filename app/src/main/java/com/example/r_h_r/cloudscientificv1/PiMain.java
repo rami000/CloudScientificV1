@@ -206,7 +206,7 @@ public class PiMain extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {
 
                         int degrees = this.progress - 100;
-                        sendData(String.valueOf(degrees));
+                        sendData(String.valueOf("PWM:" + degrees));
             }
 
 

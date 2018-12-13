@@ -73,6 +73,8 @@ public class DeviceListActivity extends Activity {
         }
     }
 
+    
+
     //method to check if the device has Bluetooth and if it is on.
     //Prompts the user to turn it on if it is off
     private void checkBTState()
