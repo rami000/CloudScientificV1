@@ -54,7 +54,7 @@ public class DeviceListActivity extends Activity {
 
         mPairedDevicesArrayAdapter.clear();// clears the array so items aren't duplicated when resuming from onPause
 
-        textConnectionStatus.setText(" "); //makes the textview blank
+        textConnectionStatus.setText(" "); //makes the text view blank
 
         // Get the local Bluetooth adapter
         mBtAdapter = BluetoothAdapter.getDefaultAdapter();

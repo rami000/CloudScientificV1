@@ -174,13 +174,26 @@ public class PiMain extends AppCompatActivity {
 
         seekBar = (SeekBar) findViewById(R.id.seekBar);
         degreesText = (TextView) findViewById(R.id.textView);
+
+
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            private SeekBar seekBar;
+            private int progress;
+
             @Override
+
+            // progress bar
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if(fromUser){
+                    this.seekBar = seekBar;
+                    this.progress = progress;
                     int degrees = progress - 100;
                     degreesText.setText(Integer.toString(degrees));
                 }
+
+                    //sendData('*' + seekBar.getProgress());
+                    //Toast.makeText(getBaseContext(), "Sending text", Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
@@ -189,9 +202,19 @@ public class PiMain extends AppCompatActivity {
             }
 
             @Override
+
             public void onStopTrackingTouch(SeekBar seekBar) {
 
+                        int degrees = this.progress - 100;
+                        sendData(String.valueOf(degrees));
             }
+
+
+            /*
+            protected void onStopTrackingTouch(SeekBar seekBar, int progress, boolean fromUser) {
+
+            }
+            */
         });
 
         // get edittext component
@@ -213,6 +236,8 @@ public class PiMain extends AppCompatActivity {
                 return false;
             }
         });
+
+
     }
 
 }
