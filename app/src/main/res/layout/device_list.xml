@@ -6,22 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".DeviceListActivity">
 
-    <TextView android:id="@+id/title_paired_devices"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Select btSerial device from paired devices:"
-        android:visibility="gone"
+    <TextView
+        android:id="@+id/title_paired_devices"
+        android:layout_width="101dp"
+        android:layout_height="2dp"
         android:background="#666"
-        android:textColor="#fff"
         android:paddingLeft="5dp"
-        />
-    <ListView android:id="@+id/paired_devices"
+        android:text="Select btSerial device from paired devices:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#fff"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="parent"
+        tools:layout_editor_absoluteY="29dp" />
+
+    <ListView
+        android:id="@+id/paired_devices"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:stackFromBottom="false"
+        android:layout_height="350dp"
+        android:layout_marginTop="52dp"
         android:layout_weight="1"
-        />
+        android:stackFromBottom="false"
+        app:layout_constraintTop_toBottomOf="@+id/infoText"
+        tools:layout_editor_absoluteX="1dp" />
 
     <TextView
         android:id="@+id/connecting"
@@ -33,10 +39,14 @@
         android:id="@+id/infoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="51dp"
         android:text="If no devices are listed please pair your device in Android settings"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:layout_editor_absoluteX="0dp" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">

@@ -12,28 +12,61 @@
         android:id="@+id/editText1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
         android:layout_weight="2"
         android:ems="10"
         android:hint="Enter some text"
         android:imeOptions="actionSend"
-        android:singleLine="true" />
+        android:singleLine="true"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <Button
         android:id="@+id/functionOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="104dp"
-        android:text="Function 1" />
+        android:layout_marginTop="48dp"
+        android:text="Function 1"
+        app:layout_constraintTop_toBottomOf="@+id/functionTwo"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/functionTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/functionOne"
         android:layout_below="@+id/functionOne"
-        android:layout_marginTop="67dp"
-        android:text="Function 2" />
+        android:layout_alignLeft="@+id/functionOne"
+        android:layout_marginTop="44dp"
+        android:text="Function 2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="335dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="236dp"
+        android:layout_marginEnd="8dp"
+        android:max="200"
+        android:progress="100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editText1" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="87dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="8dp"
+        android:text="0"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
 
 </android.support.constraint.ConstraintLayout>

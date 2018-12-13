@@ -3,7 +3,7 @@
     package="com.example.r_h_r.cloudscientificv1">
 
     <uses-sdk
-        android:targetSdkVersion="18" />
+        android:targetSdkVersion="26" />
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />

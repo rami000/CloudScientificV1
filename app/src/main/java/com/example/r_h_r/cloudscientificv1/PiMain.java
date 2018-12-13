@@ -12,6 +12,8 @@ import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -25,6 +27,8 @@ public class PiMain extends AppCompatActivity {
     Button functionOne, functionTwo;
 
     private EditText editText;
+    private TextView degreesText;
+    private SeekBar seekBar;
 
     //Member Fields
     private BluetoothAdapter btAdapter = null;
@@ -167,6 +171,28 @@ public class PiMain extends AppCompatActivity {
     }
 
     public void addKeyListener() {
+
+        seekBar = (SeekBar) findViewById(R.id.seekBar);
+        degreesText = (TextView) findViewById(R.id.textView);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if(fromUser){
+                    int degrees = progress - 100;
+                    degreesText.setText(Integer.toString(degrees));
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
         // get edittext component
         editText = (EditText) findViewById(R.id.editText1);
